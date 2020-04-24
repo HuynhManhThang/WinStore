@@ -1,0 +1,92 @@
+
+<div class="main-panel">
+  <div class="content">
+    <div class="page-inner">
+      <div class="page-header">
+        <h4 class="page-title">Welcome Manager Product</h4>
+        <ul class="breadcrumbs">
+          <li class="nav-home">
+            <a href="#">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+          <li class="separator">
+            <i class="fas fa-chevron-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">List Product</a>
+          </li>
+          <li class="separator">
+            <i class="fas fa-chevron-right"></i>
+          </li>
+          <li class="nav-item">
+            <a href="#">Edit Product</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Edit Product</div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 col-lg-6">
+
+                    <!-- <div class="form-group">
+                      <label >Product Type</label>
+                      <input type="text" class="form-control" id="type" placeholder="Product Type" [(ngModel)]="product.type">
+                    </div> -->
+                    <div class="form-group">
+                      <label >Product Type</label>
+                      <select class="form-control" id="type" [(ngModel)]="product.type" required>
+                        <option value="New">New</option>
+                        <option value="Live New">Live New</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                    <label >Product Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Product Name" [(ngModel)]="product.name"  required>
+                  </div>
+                  <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" id="price" placeholder="Price" [(ngModel)]="product.price" required >
+                  </div>
+                  <div class="form-group">
+                    <label>Discout</label>
+                    <input type="number" class="form-control" id="discout" placeholder="Discout" [(ngModel)]="product.discout" required>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-6">
+                  <div class="form-group">
+                    <label>Images Url</label>
+                    <input type="text" class="form-control" id="img" placeholder="Url" [(ngModel)]="product.img" required>
+                    <img src="{{product.img}}" width="150px" height="150px" class="zoom" alt="Ảnh">
+                  </div>
+<!--
+                  <div class="form-group">
+                    <label for="exampleFormControlFile1">Images chooses</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div> -->
+                  <div class="form-group">
+                    <label for="comment">Description</label>
+                    <textarea class="form-control" id="desc" rows="5" [(ngModel)]="product.desc" required>
+
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-action">
+              <button class="btn btn-success" (click)="editProduct()">Save</button>
+              <button class="btn btn-danger" routerLink="/admin/managerPoduct">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

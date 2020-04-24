@@ -1,0 +1,54 @@
+
+	<!-- banner-2 -->
+	<div class="page-head_agile_info_w3l">
+
+	</div>
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a routerLink="/index/home"><i class="fas fa-home">Home</i></a>
+						<i class="fas fa-chevron-right"></i>
+					</li>
+					<li>Cart</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+<div class="container">
+  <h3 class="tittle-w3l text-center pt-4">
+    <span>C</span>
+    <span>a</span>
+    <span>r</span>
+    <span>t</span>
+    </h3>
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 100, 250]">
+  </mat-paginator>
+</div>
+</div>
