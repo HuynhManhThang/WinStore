@@ -9,8 +9,11 @@ import { ProductService } from 'src/app/_Services/product.service';
 })
 export class ShopComponent implements OnInit {
   page=1;
-  pageSize=12;
+  pageSize=16;
   product :Product[];
+  searchText;
+
+
   constructor(
     private productSer: ProductService,
   ) { }

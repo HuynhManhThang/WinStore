@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="assets/css/table.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
 	<link href="assets/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
@@ -166,6 +166,14 @@
   <!-- //for bootstrap working -->
   <!-- //js-files -->
     <script src="https://kit.fontawesome.com/e8ca3234ad.js" crossorigin="anonymous"></script>
+    <script  language="JavaScript">
+      function toggle(source) {
+      checkboxes = document.getElementsByName('checkall');
+      for(var i=0, n=checkboxes.length;i<n;i++) {
+        checkboxes[i].checked = source.checked;
+      }
+    }
+    </script>
   </body>
 
   </html>

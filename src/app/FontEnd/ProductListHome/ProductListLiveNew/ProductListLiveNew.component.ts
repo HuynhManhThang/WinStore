@@ -3,14 +3,15 @@ import { Product } from 'src/app/_Model/Product';
 import { ProductService } from 'src/app/_Services/product.service';
 
 @Component({
-  selector: 'app-ProductTv',
-  templateUrl: './ProductTv.component.html',
-  styleUrls: ['./ProductTv.component.css']
+  selector: 'app-ProductListLiveNew',
+  templateUrl: './ProductListLiveNew.component.html',
+  styleUrls: ['./ProductListLiveNew.component.css']
 })
-export class ProductTvComponent implements OnInit {
+export class ProductListLiveNewComponent implements OnInit {
+
   page=1;
   pageSize=8;
-  product :Product[];
+  productliveNew :Product[];
   constructor(
     private productSer: ProductService,
   ) { }
@@ -19,6 +20,7 @@ export class ProductTvComponent implements OnInit {
     this.getProducts();
   }
   getProducts(){
-    return  this.productSer.getProduts().subscribe(data => this.product=data)
+    return  this.productSer.getProdutsLiveNew().subscribe(data => this.productliveNew=data)
     }
+
 }

@@ -31,12 +31,12 @@
 			<div class="row">
 				<div class="col-lg-5 col-md-8 single-right-left " *ngIf="product">
 					<div class="grid images_3_of_2">
-            <img src="{{product.img}}" width="450" height="450" style="border-radius:5% ;" data-imagezoom="true"  alt="Ảnh">
+            <img src="{{product.imgdetail}}"  style="border-radius:5% ;width: 437px; margin-right: 0px; float: left; display: block;" data-imagezoom="true"  alt="Ảnh">
 					</div>
 				</div>
 
 				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
-					<h3 class="mb-3">{{product.name}}</h3>
+					<h1 class="mb-3">{{product.name}}</h1>
 					<p class="mb-3">
 						<span class="item_price">${{product.discout}}</span>
 						<del class="mx-2 font-weight-light">${{product.price}}</del>
@@ -66,7 +66,7 @@
             </ul>
 						<p class="my-3">
 							<i class="far fa-hand-point-right mr-2"></i>
-							<label>1 Year</label>Manufacturer Warranty</p>
+							<label class="font-weight-bold highlight">{{product.guarantee}}</label> Manufacturer Warranty</p>
 						<p class="my-sm-4 my-3">
 							<i class="fas fa-retweet mr-3"></i>Net banking & Credit/ Debit/ ATM card
 						</p>

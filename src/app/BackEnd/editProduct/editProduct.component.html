@@ -41,8 +41,8 @@
                     <div class="form-group">
                       <label >Product Type</label>
                       <select class="form-control" id="type" [(ngModel)]="product.type" required>
-                        <option value="New">New</option>
-                        <option value="Live New">Live New</option>
+                        <option value="New Mobile">New Mobile</option>
+                        <option value="Live New 99%">Live New 99%</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -57,14 +57,26 @@
                     <label>Discout</label>
                     <input type="number" class="form-control" id="discout" placeholder="Discout" [(ngModel)]="product.discout" required>
                   </div>
+                  <div class="form-group">
+                    <label >Guarantee</label>
+                    <select class="form-control" id="type"  placeholder="Guarantee" [(ngModel)]="product.guarantee"  required>
+                      <option value="6 month">6 month</option>
+                      <option value="12 month">12 month</option>
+                      <option value="16 month">16 month</option>
+                      <option value="18 month">18 month</option>
+
+                    </select>
+                  </div>
 
                 </div>
 
                 <div class="col-md-6 col-lg-6">
                   <div class="form-group">
                     <label>Images Url</label>
-                    <input type="text" class="form-control" id="img" placeholder="Url" [(ngModel)]="product.img" required>
-                    <img src="{{product.img}}" width="150px" height="150px" class="zoom" alt="Ảnh">
+                    <input type="text" class="form-control" id="img" placeholder="Ảnh Trưng Bày(192x192)..." [(ngModel)]="product.img" required>
+                    <input type="text" class="form-control" id="img" placeholder="Ảnh Detail(546x546)..." [(ngModel)]="product.imgdetail" required>
+                    <img src="{{product.img}}" width="150px" height="150px" class="zoom" alt="Ảnh trưng bày (192x192)">
+                    <img src="{{product.imgdetail}}" width="150px" height="150px" class="zoom1" alt="Ảnh Chi tiết (546x546)">
                   </div>
 <!--
                   <div class="form-group">

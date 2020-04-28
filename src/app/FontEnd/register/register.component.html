@@ -1,10 +1,23 @@
 
-
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a routerLink="/index/home"><i class="fas fa-home">Home</i></a>
+						<i class="fas fa-chevron-right"></i>
+					</li>
+					<li>Register</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 <div class="container pt-5">
   <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
     <span>Register</span></h3>
   <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
           <label>First Name</label>
           <input type="text"  placeholder="Enter First Name ..." formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -37,14 +50,7 @@
               <div *ngIf="f.password.errors.minlength" class="alert-warning"><h3>Password must be at least 6 characters!</h3></div>
           </div>
       </div>
-      <!-- <div class="form-group">
-          <label>Confirm Password</label>
-          <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-              <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-              <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-          </div>
-      </div> -->
+
       <div class="form-group">
           <button class="btn btn-primary">Register</button>
       </div>
@@ -52,6 +58,39 @@
         <a [routerLink]="['/index/login']" routerLinkActive="router-link-active" >
           Log in</a>
       </p>
-  </form>
+  </form> -->
+  <form action="#" method="post" class="creditly-card-form agileinfo_form">
+    <div class="creditly-wrapper wthree, w3_agileits_wrapper">
+      <div class="information-wrapper">
+        <div class="first-row">
+          <div class="controls form-group">
+            <label for="Firtname">First Name</label>
+            <input class="billing-address-name form-control" type="text" name="email" placeholder="Enter First Name" required="">
+          </div>
+
+          <div class="controls form-group">
+            <label for="Lastname">Last Name</label>
+            <input type="text" class="form-control" placeholder="Enter Last Name" name="password" required="">
+          </div>
+          <div class="controls form-group">
+            <label for="Email">Email</label>
+            <input class="billing-address-name form-control" type="text" name="email" placeholder="Enter Email" required="">
+          </div>
+
+          <div class="controls form-group">
+            <label for="Password">PassWord</label>
+            <input type="password" class="form-control" placeholder="Enter Password" name="password" required="">
+          </div>
+          <div class="form-group">
+            <button class="submit check_out btn"> <i class="fas fa-registered mr-2"></i>Register</button>
+        </div>
+        <p class="text-center dont-do mt-3">
+          Back To ! <a [routerLink]="['/index/login']" routerLinkActive="router-link-active" >
+            Log in</a>
+        </p>
+        </div>
+      </div>
     </div>
+  </form>
+</div>
 </div>

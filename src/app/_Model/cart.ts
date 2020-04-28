@@ -1,11 +1,11 @@
-export class Product{
+export class Cart{
   id:number;
   name:String;
   price:number;
-  discout:number;
-  img:String;
-  type:String;
   desc:String;
-  imgdetail:String;
+  img:String;
   guarantee:String;
+  type:String;
+  discout:number;
+  imgdetail:String;
 }

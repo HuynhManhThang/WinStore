@@ -50,7 +50,7 @@
                       <th>Name</th>
                       <th>Price</th>
                       <th>Discount</th>
-                      <!-- <th>Desc</th> -->
+                      <th>Guarantee</th>
                       <th>Type</th>
                       <th style="width: 10%"></th>
                     </tr>
@@ -62,7 +62,7 @@
                       <th>Name</th>
                       <th>Price</th>
                       <th>Discount</th>
-                      <!-- <th>Desc</th> -->
+                      <th>Guarantee</th>
                       <th>Type</th>
                       <th></th>
                     </tr>
@@ -74,7 +74,7 @@
                       <td class="fontz">{{prod.name}}</td>
                       <td class="fontz">${{prod.price}}</td>
                       <td class="fontz">${{prod.discout}}</td>
-                      <!-- <td>{{prod.desc}}</td> -->
+                      <td class="fontz">{{prod.guarantee}}</td>
                       <td class="fontz">{{prod.type}}</td>
                       <td>
                         <div class="form-button-action">
@@ -103,7 +103,17 @@
                     </tr>
                   </tbody>
                 </table>
-                <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="products.length"></ngb-pagination>
+                <div class="d-flex justify-content-between p-2">
+                  <ngb-pagination [collectionSize]="products.length" [(page)]="page" [pageSize]="pageSize">
+                  </ngb-pagination>
+
+                  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="15">15</option>
+                    <option [ngValue]="100">100</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>

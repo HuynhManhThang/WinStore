@@ -26,17 +26,20 @@ import { ManagerMemmberComponent } from './BackEnd/managerMemmber/managerMemmber
 import { DeleteMemmberComponent } from './BackEnd/deleteMemmber/deleteMemmber.component';
 import { ProductListComponent } from './FontEnd/ProductListHome/ProductList/ProductList.component';
 import { ProductMobilesComponent } from './FontEnd/ProductListHome/ProductMobiles/ProductMobiles.component';
-import { ProductLargeAppliancesComponent } from './FontEnd/ProductListHome/ProductLargeAppliances/ProductLargeAppliances.component';
 import { ProductTvComponent } from './FontEnd/ProductListHome/ProductTv/ProductTv.component';
 import { ProductService } from './_Services/product.service';
 import { NotFoudComponent } from './notFoud/notFoud.component';
 import { ProductDetailComponent } from './FontEnd/ProductDetail/ProductDetail.component';
 import { DashboardMemmberComponent } from './BackEnd/dashboardMemmber/dashboardMemmber.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DatatableeComponent } from './datatablee/datatablee.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { ProductListLiveNewComponent } from './FontEnd/ProductListHome/ProductListLiveNew/ProductListLiveNew.component';
+import { ContactUsComponent } from './FontEnd/ContactUs/ContactUs.component';
+import { AboutComponent } from './FontEnd/about/about.component';
+import { AddtocartComponent } from './FontEnd/addtocart/addtocart.component';
+import { ListCartComponent } from './FontEnd/ListCart/ListCart.component';
 
 
 @NgModule({
@@ -63,10 +66,14 @@ import { MatSortModule } from '@angular/material/sort';
     DeleteMemmberComponent,
     ProductListComponent,
     ProductMobilesComponent,
-    ProductLargeAppliancesComponent,
     ProductTvComponent,
     NotFoudComponent,
-    DatatableeComponent
+    ProductListLiveNewComponent,
+    ContactUsComponent,
+    AboutComponent,
+    AddtocartComponent,
+    ListCartComponent
+
   ],
   imports: [
     BrowserModule,

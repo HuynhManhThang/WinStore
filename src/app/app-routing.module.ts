@@ -14,9 +14,12 @@ import { NotFoudComponent } from './notFoud/notFoud.component';
 import { ProductDetailComponent } from './FontEnd/ProductDetail/ProductDetail.component';
 import { PreviewProductComponent } from './BackEnd/previewProduct/previewProduct.component';
 import { DashboardMemmberComponent } from './BackEnd/dashboardMemmber/dashboardMemmber.component';
-import { DatatableeComponent } from './datatablee/datatablee.component';
 import { LoginComponent } from './FontEnd/login/login.component';
 import { RegisterComponent } from './FontEnd/register/register.component';
+import { ContactUsComponent } from './FontEnd/ContactUs/ContactUs.component';
+import { AboutComponent } from './FontEnd/about/about.component';
+import { AddtocartComponent } from './FontEnd/addtocart/addtocart.component';
+import { ListCartComponent } from './FontEnd/ListCart/ListCart.component';
 
 
 const routes: Routes = [
@@ -28,13 +31,15 @@ const routes: Routes = [
       { path: 'Shop', component: ShopComponent },
       { path: "detail/:id", component: ProductDetailComponent },
       { path: "previewProduct/:id", component: PreviewProductComponent },
-      { path: 'cart', component: DatatableeComponent },
+      { path: 'cart', component: ListCartComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'contactus', component: ContactUsComponent },
+      { path: 'about', component: AboutComponent },
+      { path: "addtocart/:id", component: AddtocartComponent },
 
     ]
   },
-
   {
     path: 'admin', component: AdminComponent,
     children: [
@@ -48,12 +53,10 @@ const routes: Routes = [
       { path: "coppyAddProduct/:id", component: AddProductComponent },
       { path: 'addMemmber', component: AddMemmberComponent },
       { path: 'managerMemmber', component: ManagerMemmberComponent },
-
     ]
   },
   { path: '404', component: NotFoudComponent },
   { path: '**', redirectTo: '404', pathMatch: 'full' },
-
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
