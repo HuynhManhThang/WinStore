@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddtocartComponent implements OnInit {
 
   product :  Product;
-  cart:Cart;
+  cart : Cart = new Cart();
   constructor(
     private pServices :ProductService,
     private aRoute: ActivatedRoute,
@@ -30,7 +30,6 @@ export class AddtocartComponent implements OnInit {
     })
   }
   addtocart(){
-    console.log("đến đây rồi")
     this.pServices.addtocart(this.cart).subscribe(cartdata => {
       this.router.navigateByUrl('/index/cart')
       console.log(cartdata)

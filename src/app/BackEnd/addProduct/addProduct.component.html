@@ -33,10 +33,6 @@
               <div class="row">
                 <div class="col-md-6 col-lg-6">
 
-                  <!-- <div class="form-group">
-                      <label >Product Type</label>
-                      <input type="text" class="form-control" id="type" placeholder="Product Type" >
-                    </div> -->
                   <div class="form-group">
                     <label>Product Type</label>
                     <select class="form-control" id="type" [(ngModel)]="product.type" required>
@@ -66,12 +62,9 @@
                       <option value="12 month">12 month</option>
                       <option value="16 month">16 month</option>
                       <option value="18 month">18 month</option>
-
                     </select>
                   </div>
-
                 </div>
-
                 <div class="col-md-6 col-lg-6">
                   <div class="form-group">
                     <label>Images Url</label>
@@ -83,14 +76,9 @@
                     <img src="{{product.imgdetail}}" width="150px" height="150px" class="zoom1"
                       alt="Ảnh Chi tiết (546x546)">
                   </div>
-                  <!-- <div class="form-group">
-                    <label for="exampleFormControlFile1">Images chooses</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div> -->
                   <div class="form-group">
                     <label>Description</label>
                     <textarea class="form-control" id="desc" rows="5" [(ngModel)]="product.desc" required>
-
                     </textarea>
                   </div>
                 </div>
@@ -98,6 +86,7 @@
             </div>
             <div class="card-action">
               <button class="btn btn-success" (click)="addProducts()">Add</button>
+            <!-- <button class="btn btn-outline-danger" (click)="addtocart()" data-dismiss="modal">Yes</button> -->
               <button class="btn btn-danger" routerLink="/admin/managerPoduct">Cancel</button>
             </div>
           </div>

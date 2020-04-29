@@ -74,7 +74,11 @@
                       </div>
                       <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                         <div class="btn-group">
-                          <button class="btn btn-outline-danger">Add to cart</button>
+                          <a routerLink="/index/addtocart/{{prod.id}}">
+                            <button class="btn btn-outline-danger"  data-toggle="modal"  data-target="#exampleModal">
+                              Add to cart
+                            </button>
+                          </a>
                           <button class="btn btn-outline-info"  routerLink="/index/detail/{{prod.id}}" routerLinkActive="active">Detail</button>
                         </div>
                       </div>

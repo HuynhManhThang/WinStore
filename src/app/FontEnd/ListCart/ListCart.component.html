@@ -21,17 +21,16 @@
   <div class="container py-xl-4 py-lg-2">
     <div class="checkout-right">
       <h4 class="mb-sm-4 mb-3">Your shopping cart contains:
-        <span>3 Products</span>
+        <span> Products</span>
       </h4>
       <div class="container">
         <div class="card"  style="background: rgb(240, 214, 214);">
           <table class="table">
             <input type="checkbox" onclick="toggle(this)"  class="ml-3 mt-3" style="width: 20px;height:20px;">
-            Image
             <th scope="col">Name</th>
-            <th scope="col" style="text-align: center;">Type</th>
-            <th scope="col" style="text-align: center;">Price</th>
-            <th scope="col" style="text-align: center;">Action</th>
+            <th scope="col" style="text-align: right;">Type</th>
+            <th scope="col" style="text-align: right;">Price</th>
+            <th scope="col" style="text-align: right;">Action</th>
 
           </table>
         </div>
@@ -46,7 +45,7 @@
             <table class="table">
               <tbody>
                 <tr>
-                  <td><img class="zoom" src="{{cart.img}}" alt="Ảnh" width="100" height="100"></td>
+                  <!-- <td><img class="zoom" src="{{cart.img}}" alt="Ảnh" width="100" height="100"></td> -->
                   <td style="font-size: large;">{{cart.name}}</td>
                   <td style="font-size: large;">{{cart.type}}</td>
                   <td style="font-size: large;">{{cart.discout}}</td>

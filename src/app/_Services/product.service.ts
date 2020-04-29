@@ -41,12 +41,16 @@ export class ProductService {
     }
  return this.http.get<Product[]>( `${this.api}?search=${typeString}`);
   }
+
+
+  /*Cart*/
   getcarts(): Observable<Cart[]> {
     return this.http.get<Cart[]>(this.apic)
   };
   addtocart(cart): Observable<Cart> {
     return this.http.post<Cart>(this.apic, cart);
   }
+  /*done */
   removeCart(id): Observable<Cart> {
     return this.http.delete<Cart>(`${this.apic}/${id}`);
   }
