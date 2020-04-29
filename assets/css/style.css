@@ -604,12 +604,12 @@ h3.tittle-w3l span {
     transition: all 0.5s ease-out 0s;
     visibility: hidden;
 }
-
-.product-men:nth-child(2) .product-new-top {
+/*
+.product-men:nth-child(1) .product-new-top {
     background: rgb(255, 7, 7);
 }
 
-.product-men:nth-child(3) .product-new-top {
+ .product-men:nth-child(3) .product-new-top {
     background: #f321a3;
 }
 .product-men:nth-child(4) .product-new-top {
@@ -632,10 +632,10 @@ h3.tittle-w3l span {
 
 .product-men:nth-child(4) .product-new-top {
   background: #87f321;
-}
+} */
 
 .product-new-top {
-    background: #ff2978;
+  background: rgb(255, 7, 7);
     color: #fff;
     position: absolute;
     top: 0;
@@ -645,6 +645,18 @@ h3.tittle-w3l span {
     padding: 4px 10px;
     border-radius: 4px;
 }
+.product-new-top1 {
+  background: rgb(117, 108, 245);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 13px;
+    text-align: center;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
 
 .inner-men-cart-pro {
     height: 100%;
@@ -2307,6 +2319,10 @@ div#testimonials h4.m-title {
         font-size: 12px;
         padding: 3px 8px;
     }
+    .product-new-top1 {
+      font-size: 12px;
+      padding: 3px 8px;
+  }
     h3.effect-bg {
         font-size: 40px;
         margin-top: 2.5em;
