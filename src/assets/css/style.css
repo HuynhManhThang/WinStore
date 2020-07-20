@@ -80,7 +80,7 @@ label {
 /*-- top-header --*/
 
 .main-top-w3l {
-    background: #0879c9;
+    background: #1fc908;
 }
 
 .header-most-top p {
@@ -977,9 +977,18 @@ a.price-mar {
 
 /*-- special effect --*/
 
-.product-sec1 {
+.product-sec1:hover {
     box-shadow: 0px 0px 15px 0px #D6D6D6;
 }
+.product-sec1{
+  box-shadow: 0px 0px 1px 0px
+}
+.ufo:hover {
+  box-shadow: 0px 0px 15px 0px #D6D6D6;
+  border-radius: 5px;
+}
+
+
 
 h3.heading-tittle {
     color: #000;

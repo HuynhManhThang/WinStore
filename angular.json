@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "webass"
+  "defaultProject": "webass",
+  "cli": {
+    "analytics": "19fc1360-2b44-4cbf-bcc9-1f4ec945282c"
+  }
 }

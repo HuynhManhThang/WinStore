@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup ,FormControl, Validators, FormBuilder } from '@angular/forms';
+import { User } from 'src/app/_Model/User';
 
 @Component({
   selector: 'app-register',
@@ -7,34 +8,35 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
-    submitted = false;
-
+user :User;
+userFromGroup:FormGroup;
+submitted = false;
     constructor(
-      private formBuilder: FormBuilder
+      private formbuilder:FormBuilder
       ) { }
 
     ngOnInit() {
-        this.registerForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]],
-            confirmPassword: ['', Validators.required]
-        });
+     this.createForm()
     }
-
-    // convenience getter for easy access to form fields
-    get f() { return this.registerForm.controls; }
-
+    createForm(){
+this.userFromGroup=this.formbuilder.group({
+  email:['',[Validators.required,Validators.email]],
+  username:['',[Validators.required,Validators.minLength(3),Validators.maxLength(255)]],
+  password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(255)]],
+  numberphone:['',[Validators.required,Validators.minLength(9)]],
+})
+    }
+    //get để lấy các trường dễ dàng hon
+    get u() { return this.userFromGroup.controls;}
     onSubmit() {
-        this.submitted = true;
+      this.submitted = true;
 
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
+      // dùng lại nếu là invalid
+      if (this.userFromGroup.invalid) {
+          return;
+      }
 
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-    }
+      alert('Register Success OK :-)\n\n' + JSON.stringify(this.userFromGroup.value))
+  }
+
 }

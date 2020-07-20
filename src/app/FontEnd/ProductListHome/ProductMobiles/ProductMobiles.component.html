@@ -1,7 +1,7 @@
-<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+<div id="NewMobile" class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4" style="border-radius: 18px;">
   <h3 class="heading-tittle text-center font-italic">New Brand Mobiles</h3>
   <div class="row">
-    <div class="col-md-3 product-men mt-5" *ngFor="let product of product |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+    <div class="col-md-3 product-men mt-5  ufo" *ngFor="let product of product |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <div class="men-pro-item simpleCart_shelfItem">
         <div class="men-thumb-item text-center">
           <img class="zoom" src="{{product.img}}" width="200" height="200" style="border-radius:5% ;" alt="Ảnh">
@@ -18,7 +18,7 @@
         <div class="item-info-product text-center border-top mt-4">
           <h4 class="pt-1">
             <!-- <a routerLink="/index/detail/{{product.id}}">{{product.name}}</a> -->
-            <input  maxlength="15" disabled style="font-size: 16px;"  class="form-control-plaintext pl-4" value="{{product.name}}">
+            <input  style="text-transform:uppercase;"  maxlength="15" disabled style="font-size: 16px;"  class="form-control-plaintext pl-4" value="{{product.name}}">
           </h4>
           <div class="info-product-price my-2">
             <span class="item_price">${{product.discout}}</span>
@@ -28,7 +28,7 @@
             <div class="btn-group">
               <a routerLink="/index/addtocart/{{product.id}}">
                 <button class="btn btn-outline-danger"  data-toggle="modal"  data-target="#exampleModal">
-                  Add to cart
+                  Buy Now
                 </button>
               </a>
               <button class="btn btn-outline-info"  routerLink="/index/detail/{{product.id}}" routerLinkActive="active">Detail</button>

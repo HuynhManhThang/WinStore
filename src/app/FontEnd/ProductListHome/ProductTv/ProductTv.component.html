@@ -1,7 +1,7 @@
-<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4 pt-4">
+<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4 pt-5" style="border-radius: 18px;">
   <h3 class="heading-tittle text-center font-italic">Liquidation Discount</h3>
   <div class="row">
-    <div class="col-md-3 product-men mt-5" *ngFor="let prod of product |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+    <div class="col-md-3 product-men mt-5  ufo" *ngFor="let prod of product |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
       <div class="men-pro-item simpleCart_shelfItem">
         <div class="men-thumb-item text-center">
           <img class="zoom" src="{{prod.img}}" width="200" height="200" style="border-radius:5% ;" alt="Ảnh">
@@ -33,13 +33,13 @@
                 <input type="hidden" name="currency_code" value="USD" />
                 <input type="hidden" name="return" value=" " />
                 <input type="hidden" name="cancel_return" value=" " />
-                <input type="submit" name="submit" value="Add to cart" class="button btn" />
+                <input type="submit" name="submit" value="Buy Now" class="button btn" />
               </fieldset>
             </form> -->
             <div class="btn-group">
               <a routerLink="/index/addtocart/{{prod.id}}">
                 <button class="btn btn-outline-danger"  data-toggle="modal"  data-target="#exampleModal">
-                  Add to cart
+                  Buy Now
                 </button>
               </a>
               <button class="btn btn-outline-info"  routerLink="/index/detail/{{prod.id}}" routerLinkActive="active">Detail</button>

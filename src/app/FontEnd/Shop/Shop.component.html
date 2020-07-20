@@ -22,7 +22,7 @@
 	<div class="ads-grid py-sm-5 py-4">
 		<div class="container py-xl-4 py-lg-2">
 
-        <div class="container-12 pb-2 product-sec1 px-sm-4 px-3 py-3 mb-4">
+        <div class="container-12 pb-2 product-sec1 px-sm-4 px-3 py-3 mb-4 sticky-top"  style="border-radius: 18px;">
           <div class="card"  style="background: rgb(243, 230, 230);">
             <table class="table">
 
@@ -49,11 +49,11 @@
 			<!-- //tittle heading -->
 			<div class="row"  >
 				<!-- product left -->
-				<div class="agileinfo-ads-display col-lg-10">
+				<div class="agileinfo-ads-display col-lg-10" >
 					<div class="wrapper">
-            <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+            <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4"  style="border-radius: 18px;">
               <div class="row">
-                <div class="col-md-3 product-men mt-5 " *ngFor="let prod of product |filter:searchText  |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                <div class="col-md-3 product-men mt-5 ufo" *ngFor="let prod of product |  slice: (page-1) * pageSize : (page-1) * pageSize + pageSize |filter:searchText">
                   <div class="men-pro-item simpleCart_shelfItem">
                     <div class="men-thumb-item text-center">
                       <img src="{{prod.img}}" width="200" height="200" style="border-radius:5% ;" alt="Ảnh">
@@ -66,23 +66,22 @@
                     <div class="item-info-product text-center border-top mt-4">
                       <h4 class="pt-1">
                         <!-- <a href="single.html" maxlength="10"></a> -->
-                        <input  maxlength="15" disabled style="font-size: 16px;"  class="form-control-plaintext pl-4" value="{{prod.name}}">
+                        <input  style="text-transform:uppercase;" maxlength="15" disabled style="font-size: 16px;"  class="form-control-plaintext pl-4" value="{{prod.name}}">
                       </h4>
                       <div class="info-product-price my-2">
                         <span class="item_price">${{prod.discout}}</span>
                         <del>${{prod.price}}</del>
                       </div>
-                      <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+
                         <div class="btn-group">
                           <a routerLink="/index/addtocart/{{prod.id}}">
                             <button class="btn btn-outline-danger"  data-toggle="modal"  data-target="#exampleModal">
-                              Add to cart
+                              Buy Now
                             </button>
                           </a>
                           <button class="btn btn-outline-info"  routerLink="/index/detail/{{prod.id}}" routerLinkActive="active">Detail</button>
                         </div>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -95,9 +94,9 @@
         </div>
 				<!-- //product left -->
 				<!-- product right -->
-				<div class="col-lg-2 mt-lg-0 mt-4 p-lg-0">
-					<div class="side-bar p-sm-4 p-3">
-						<div class="search-hotel border-bottom py-2">
+				<div class="col-lg-2 mt-lg-0 mt-4 p-lg-0 " >
+					<div class="side-bar p-sm-4 p-3 "  style="border-radius: 18px;">
+						<div class="search-hotel border-bottom py-2 ">
               <h3 class="agileits-sear-head mb-3"><i class="fas fa-filter"></i> Search Filter</h3>
 							<!-- <form action="#" method="post">
 

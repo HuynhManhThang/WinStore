@@ -14,86 +14,170 @@
             <i class="fas fa-chevron-right"></i>
           </li>
           <li class="nav-item">
-            <a href="#">List Product</a>
+            <a routerLink="/admin/managerPoduct" routerLinkActive="active">List Product</a>
           </li>
           <li class="separator">
             <i class="fas fa-chevron-right"></i>
           </li>
           <li class="nav-item">
-            <a href="#">Edit Product</a>
+            <a routerLink="/admin" routerLinkActive="active-link">Edit Product</a>
           </li>
         </ul>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="card">
+          <div class="card" style="background-color: rgb(190, 245, 227);">
             <div class="card-header">
               <div class="card-title">Edit Product</div>
             </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6 col-lg-6">
-                    <div class="form-group">
-                      <label >Product Type</label>
-                      <select class="form-control" id="type" [(ngModel)]="product.type" required>
-                        <option value="New Mobile">New Mobile</option>
-                        <option value="Live New 99%">Live New 99%</option>
-                      </select>
+            <div class=" card-body">
+              <div class="row ">
+                <div class="container col-md-10 col-lg-10">
+                  <div class="form-group  card card mb-2">
+                    <div class="row">
+                      <!-- Guarantee -->
+                      <div class="col-md-6">
+                        <label>Guarantee</label>
+                        <select class="form-control" id="type" placeholder="Guarantee" [(ngModel)]="product.guarantee"
+                          required>
+                          <option value="6 month">6 month</option>
+                          <option value="12 month">12 month</option>
+                          <option value="16 month">16 month</option>
+                          <option value="18 month">18 month</option>
+
+                        </select>
+                      </div>
+                      <!--end Guarantee -->
+                      <!-- product type -->
+                      <div class="col-md-6">
+                        <label>Product Type</label>
+                        <select class="form-control" id="type" [(ngModel)]="product.type" required>
+                          <option value="New Mobile">New Mobile</option>
+                          <option value="Live New 99%">Live New 99%</option>
+                        </select>
+                      </div>
+                      <!--end product type -->
                     </div>
-                    <div class="form-group">
-                    <label >Product Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Product Name" [(ngModel)]="product.name"  required>
                   </div>
-                  <div class="form-group">
-                    <label>Price</label>
-                    <input type="number" class="form-control" id="price" placeholder="Price" [(ngModel)]="product.price" required >
-                  </div>
-                  <div class="form-group">
-                    <label>Discout</label>
-                    <input type="number" class="form-control" id="discout" placeholder="Discout" [(ngModel)]="product.discout" required>
-                  </div>
-                  <div class="form-group">
-                    <label >Guarantee</label>
-                    <select class="form-control" id="type"  placeholder="Guarantee" [(ngModel)]="product.guarantee"  required>
-                      <option value="6 month">6 month</option>
-                      <option value="12 month">12 month</option>
-                      <option value="16 month">16 month</option>
-                      <option value="18 month">18 month</option>
+                  <form [formGroup]="userFromGroup" (ngSubmit)="onSubmit()">
+                    <!-- Product Name -->
+                    <div class="form-group  card card mb-3">
+                      <label>Product Name</label>
+                      <input type="text" class="form-control" id="name" formControlName="name"
+                        placeholder="Product Name" [(ngModel)]="product.name" required
+                       />
+                      <div *ngIf="submitted && u.name.errors" class="alert-warning">
+                        <div *ngIf="u.name.errors.required">Product Name is required</div>
+                        <div *ngIf="u.name.errors.maxlength">Product Name must no more than 255 characters</div>
+                      </div>
+                    </div>
+                    <!--end Product Name -->
 
-                    </select>
-                  </div>
+                    <!-- Price -->
+                    <div class="form-group  card card mb-3">
+                      <label>Price</label>
+                      <input type="number" class="form-control" id="price" formControlName="price" placeholder="Price"
+                        [(ngModel)]="product.price" required
+                       />
+                      <div *ngIf="submitted && u.price.errors" class="alert-warning">
+                        <div *ngIf="u.price.errors.required">Price is required</div>
+                        <div *ngIf="u.price.errors.maxlength">Price must no more than 255 characters</div>
+                      </div>
+                    </div>
+                    <!--end Price -->
 
-                </div>
+                    <!-- Discout -->
+                    <div class="form-group  card card mb-3">
+                      <label>Discout</label>
+                      <input type="number" class="form-control" id="discout" formControlName="discout"
+                        placeholder="Discout" [(ngModel)]="product.discout" required
+                       />
+                      <div *ngIf="submitted && u.discout.errors" class="alert-warning">
+                        <div *ngIf="u.discout.errors.required">Price is required</div>
+                        <div *ngIf="u.discout.errors.maxlength">Price must no more than 255 characters</div>
+                      </div>
+                    </div>
+                    <!--end Discout -->
+                    <!-- Description -->
+                    <div class="form-group  card card mb-3">
+                      <label>Description</label>
+                      <textarea class="form-control" rows="10" id="desc" formControlName="desc"
+                        [(ngModel)]="product.desc" required >
+                      </textarea>
+                      <div *ngIf="submitted && u.desc.errors" class="alert-warning">
+                        <div *ngIf="u.desc.errors.required">Description is required</div>
+                      </div>
+                    </div>
+                    <!--end Description -->
 
-                <div class="col-md-6 col-lg-6">
-                  <div class="form-group">
-                    <label>Images Url</label>
-                    <input type="text" class="form-control" id="img" placeholder="Ảnh Trưng Bày(192x192)..." [(ngModel)]="product.img" required>
-                    <input type="text" class="form-control" id="img" placeholder="Ảnh Detail(546x546)..." [(ngModel)]="product.imgdetail" required>
-                    <img src="{{product.img}}" width="150px" height="150px" class="zoom" alt="Ảnh trưng bày (192x192)">
-                    <img src="{{product.imgdetail}}" width="150px" height="150px" class="zoom1" alt="Ảnh Chi tiết (546x546)">
-                  </div>
-<!--
-                  <div class="form-group">
-                    <label for="exampleFormControlFile1">Images chooses</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div> -->
-                  <div class="form-group">
-                    <label for="comment">Description</label>
-                    <textarea class="form-control" id="desc" rows="5" [(ngModel)]="product.desc" required>
+                    <!-- Images Url -->
+                    <div class="form-group  card card mb-3">
+                      <label>Images Url</label>
+                      <div class="row">
+                        <!-- Input Image -->
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" id="img" formControlName="img"
+                            placeholder="Ảnh Trưng Bày(192x192)..." [(ngModel)]="product.img" required
+                          />
+                          <div *ngIf="submitted && u.img.errors" class="alert-warning">
+                            <div *ngIf="u.img.errors.required">Image is required</div>
+                          </div>
+                        </div>
+                        <!-- Input Image deatil-->
+                        <!-- show Image -->
 
-                    </textarea>
-                  </div>
+                        <img src="{{product.img}}" width="150px" height="150px" class="zoom"
+                          alt="Ảnh trưng bày (192x192)">
+                        <div class="col-md-6">
+                          <input type="text" class="form-control" id="imgdetail" formControlName="imgdetail"
+                            placeholder="Ảnh Detail(546x546)..." [(ngModel)]="product.imgdetail" required
+                             />
+                          <div *ngIf="submitted && u.imgdetail.errors" class="alert-warning">
+                            <div *ngIf="u.imgdetail.errors.required">Image Detail is required</div>
+                          </div>
+                        </div>
+                        <!-- show Image deatil-->
+
+                        <img src="{{product.imgdetail}}" width="150px" height="150px" class="zoom1"
+                          alt="Ảnh Chi tiết (546x546)">
+                      </div>
+                    </div>
+                    <!-- end Images Url -->
+                    <div class="card-action">
+                      <button type="submit" class="btn btn-success">Save</button>
+                      <button class="btn btn-danger" routerLink="/admin/managerPoduct">Cancel</button>
+                    </div>
+                  </form>
                 </div>
               </div>
-            </div>
-            <div class="card-action">
-              <button class="btn btn-success" (click)="editProduct()">Save</button>
-              <button class="btn btn-danger" routerLink="/admin/managerPoduct">Cancel</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <footer class="footer">
+    <div class="container-fluid">
+      <nav class="pull-left">
+        <ul class="nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Help
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Licenses
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright ml-auto">
+        2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
+          routerLink="/admin/product-manager">Webass.huynhmanhthang.@fpt.com.vn</a>
+      </div>
+    </div>
+  </footer>
+
 </div>

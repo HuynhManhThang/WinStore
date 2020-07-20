@@ -54,5 +54,7 @@ export class ProductService {
   removeCart(id): Observable<Cart> {
     return this.http.delete<Cart>(`${this.apic}/${id}`);
   }
-
+  searchProduct(keyword:string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.api}?search=${keyword}`);
+  };
 }

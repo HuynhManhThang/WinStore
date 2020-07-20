@@ -1,5 +1,6 @@
-<!-- top-header -->
-<div class="agile-main-top">
+
+  <!-- top-header -->
+<div class="agile-main-top ">
   <div class="container-fluid">
     <div class="row main-top-w3l py-2">
       <div class="col-lg-4 header-most-top">
@@ -58,6 +59,7 @@
 <!-- //shop locator (popup) -->
 <!-- //top-header -->
 <!-- header-bottom-->
+<div  class="sticky-top" style="background: rgb(220, 238, 54);">
 <div class="header-bot">
   <div class="container">
     <div class="row header-bot_inner_wthreeinfo_header_mid">
@@ -77,23 +79,19 @@
           <div class="col-10 agileits_search">
             <form class="form-inline">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
-              <button class="btn btn-outline-primary" type="submit" name="submit" routerLink="/index/cart"
-              routerLinkActive="active">
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
+              <!-- <input class="form-control mr-sm-2" type="text" name="keyword" [(ngModel)]="keyword" aria-label="Search"
+                placeholder="Search ...." /> -->
+              <button class="btn btn-outline-info" (click)="search()">
+                <i class="fas fa-search"></i>
+                Search
+              </button>
             </form>
           </div>
           <!-- //search -->
-          <!-- cart details -->
-          <!-- <div class="col-2  text-center mt-sm-0 mt-2">
-            <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-              <button class="btn btn-info btn-outline-primary" type="submit" name="submit" routerLink="/index/cart"
-                routerLinkActive="active">
-                <i class="fas fa-cart-arrow-down"></i>
-              </button>
-            </div>
-          </div> -->
-          <!-- //cart details -->
+          <button class="btn btn-outline-primary" type="submit" name="submit" routerLink="/index/cart"
+            routerLinkActive="active">
+            <i class="fas fa-cart-arrow-down"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -102,7 +100,7 @@
 <!-- shop locator (popup) -->
 <!-- //header-bottom -->
 <!-- navigation -->
-<div class="navbar-inner">
+<div class="navbar-inner ">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="agileits-navi_search">
@@ -132,14 +130,23 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+          <li class="nav-item mr-lg-2 mb-lg-0 mb-2 ">
             <a class="nav-link" routerLink="/index/Shop" routerLinkActive="active">Shop</a>
           </li>
           <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-            <a class="nav-link" routerLink="/index/home">New Mobile</a>
+            <a class="nav-link" href="#NewMobile">New Mobile</a>
+          </li>
+          <li class="nav-item mr-lg-2 mb-lg-0 mb-2 ">
+            <a class="nav-link" href="#LiveNew99">Live New</a>
+          </li>
+          <li class="nav-item mr-lg-2 mb-lg-0 mb-2 ">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+            <a class="nav-link" href="#">Service</a>
           </li>
 
-          <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+          <!-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
             <a class="nav-link dropdown-toggle" routerLink="#" routerLinkActive="active" role="button"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Electronics
@@ -207,8 +214,8 @@
                 </div>
               </div>
             </div>
-          </li>
-          <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+          </li> -->
+          <!-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               Appliances
@@ -282,7 +289,7 @@
                 </div>
               </div>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
             <a class="nav-link" routerLink="/index/about" routerLinkActive="active">About Us</a>
           </li>
@@ -313,9 +320,25 @@
 </div>
 <!-- //navigation -->
 
+</div>
 <router-outlet></router-outlet>
-
-
+<div class="container ">
+<div class="ph-item">
+  <div class="ph-col-12">
+      <div class="ph-picture"></div>
+      <div class="ph-row">
+          <div class="ph-col-6 big"></div>
+          <div class="ph-col-4 empty big"></div>
+          <div class="ph-col-2 big"></div>
+          <div class="ph-col-4"></div>
+          <div class="ph-col-8 empty"></div>
+          <div class="ph-col-6"></div>
+          <div class="ph-col-6 empty"></div>
+          <div class="ph-col-12"></div>
+      </div>
+  </div>
+</div>
+</div>
 <!-- middle section -->
 <div class="join-w3l1 py-sm-5 py-4">
   <div class="container py-xl-4 py-lg-2">

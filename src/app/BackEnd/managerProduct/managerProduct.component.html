@@ -24,16 +24,32 @@
           <div class="card">
             <div class="card-header">
               <div class="d-flex align-items-center">
-                <h4 class="card-title">List Product</h4>
+                <h3 class="card-title">Show </h3>
+                <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+                  <option [ngValue]="5">5</option>
+                  <option [ngValue]="10">10</option>
+                  <option [ngValue]="15">15</option>
+                  <option [ngValue]="100">100</option>
+                </select>
                 <div class="search-hero pl-2">
-                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText"  placeholder="Search ....">
+                  <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText"  placeholder="Search ...."> -->
+                  <input class="form-control" type="text" name="keyword" [(ngModel)]="keyword"  placeholder="Search ...."/>
                 </div>
+                <button  class="btn btn-outline-info" (click)="search()">
+                  <i class="fas fa-search"></i>
+                    Search
+                  </button>
+                  <button class="btn btn-outline-secondary  ml-3" (click)="exportAsXLSX()">
+                    <i class="fa fa-file-excel-o" style="font-size:22px;color:rgb(160, 173, 151)"></i>
+                    Excel
+                  </button>
                 <button class="btn btn-primary btn-round ml-auto">
                   <a routerLink="/admin/addProduct" style="color: white;"><i class="fa fa-plus"></i>
                     Add Product
                   </a>
-
                 </button>
+
+
               </div>
             </div>
             <div class="card-body">
@@ -79,7 +95,7 @@
                       <td>
                         <div class="form-button-action">
 
-                          <a routerLink="/admin/editProduct/{{prod.id}}">
+                          <a routerLink="/admin/editProduct/{{prod.id}}"     routerLinkActive="active">
                             <button type="button" class="btn btn-link btn-primary btn-lg">
                               <i class="fa fa-edit"  ngbTooltip="Update"></i>
                             </button>
@@ -89,10 +105,10 @@
                             data-original-title="Remove" (click)="removeItem(prod.id)">
                             <i class="fa fa-times"  ngbTooltip="Remove"></i>
                           </button>
-                          <button type="button" class="btn btn-link btn-primary btn-lg" data-original-title="Coppy" routerLink="/admin/coppyAddProduct/{{prod.id}}">
+                          <button type="button" class="btn btn-link btn-primary btn-lg" data-original-title="Coppy" routerLink="/admin/coppyAddProduct/{{prod.id}}" routerLinkActive="active">
                             <i class="fa fa-copy"   ngbTooltip="Coppy"></i>
                           </button>
-                          <a routerLink="/admin/previewProduct/{{prod.id}}">
+                          <a routerLink="/admin/previewProduct/{{prod.id}}"   routerLinkActive="active">
                             <button type="button" title="" class="btn btn-link btn-primary btn-lg" data-toggle="modal"
                               data-target="#ProductDetailModal">
                               <i class="fa fa-eye"  ngbTooltip="Detail"></i>
@@ -107,12 +123,7 @@
                   <ngb-pagination [collectionSize]="products.length" [(page)]="page" [pageSize]="pageSize">
                   </ngb-pagination>
 
-                  <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-                    <option [ngValue]="5">5</option>
-                    <option [ngValue]="10">10</option>
-                    <option [ngValue]="15">15</option>
-                    <option [ngValue]="100">100</option>
-                  </select>
+
                 </div>
               </div>
             </div>
@@ -120,6 +131,30 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <nav class="pull-left">
+          <ul class="nav">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Help
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Licenses
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright ml-auto">
+          2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
+            routerLink="/admin/product-manager">Webass.huynhmanhthang.@fpt.com.vn</a>
+        </div>
+      </div>
+    </footer>
+
   </div>
 
 </div>
