@@ -25,6 +25,7 @@ data :Product;
   }
   getProducts() {
     return this.productSer.getProduts().subscribe(data => this.products = data)
+
   }
   removeItem(id) {
     this.productSer.removeProduct(id).subscribe(response => {

@@ -132,6 +132,8 @@
                           <input type="text" class="form-control" id="imgdetail" formControlName="imgdetail"
                             placeholder="Ảnh Detail(546x546)..." [(ngModel)]="product.imgdetail" required
                             />
+                            <input  type="file" accept="image/*" (change)="changeListener($event)">
+                            <!-- <img src="{{image}}" alt=""> -->
                           <div *ngIf="submitted && u.imgdetail.errors" class="alert-warning">
                             <div *ngIf="u.imgdetail.errors.required">Image Detail is required</div>
                           </div>

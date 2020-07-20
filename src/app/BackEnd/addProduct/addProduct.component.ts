@@ -16,6 +16,10 @@ export class AddProductComponent implements OnInit {
   userFromGroup: FormGroup;
   submitted = false;
   prod: Product;
+  image;
+
+  changeListener($event) : void {
+  this.readThis($event.target);}
   constructor(
     private pService: ProductService,
     private aRouter: ActivatedRoute,
@@ -63,5 +67,15 @@ export class AddProductComponent implements OnInit {
     this.pService.addProduct(this.product).subscribe(data => {
       this.router.navigateByUrl('/admin/managerPoduct')
     });
+  }
+  readThis(inputValue: any): void {
+    var file:File = inputValue.files[0];
+    var myReader:FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.image = myReader.result;
+      console.log(myReader.result);
+    }
+    myReader.readAsDataURL(file);
   }
 }
